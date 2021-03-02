@@ -481,6 +481,7 @@ void RS485_Check_UART_Data(volatile struct mstp_port_struct_t *mstp_port)
                 /* FIFO is giving data - just poll */
                 waiter.tv_sec = 0;
                 waiter.tv_usec = 0;
+                return;
             } else {
                 /* FIFO is empty - wait a longer time */
                 waiter.tv_sec = 0;
